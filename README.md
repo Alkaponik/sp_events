@@ -1,1 +1,1 @@
-# sp_events
+# Magento shop events
