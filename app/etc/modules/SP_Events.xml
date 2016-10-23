@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2016, Pavel Usachev
+ */
+-->
+<config>
+    <modules>
+        <SP_Events>
+            <active>true</active>
+            <codePool>local</codePool>
+        </SP_Events>
+    </modules>
+</config>

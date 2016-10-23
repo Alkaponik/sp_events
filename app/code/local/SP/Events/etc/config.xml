@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2016, Pavel Usachev
+ */
+-->
+<config>
+    <modules>
+        <SP_Events>
+            <version>0.1.0</version>
+        </SP_Events>
+    </modules>
+    <global>
+        <helpers>
+            <events>
+                <class>SP_Events_Helper</class>
+            </events>
+        </helpers>
+        <models>
+            <events>
+                <class>SP_Events_Model</class>
+                <resourceModel>events_resource</resourceModel>
+            </events>
+            <events_resource>
+                <class>SP_Events_Model_Resource</class>
+                <entities>
+                    <events>
+                        <table>sp_events</table>
+                    </events>
+                </entities>
+            </events_resource>
+        </models>
+        <resources>
+            <events_setup>
+                <setup>
+                    <module>SP_Events</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </events_setup>
+            <events_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </events_write>
+            <events_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </events_read>
+        </resources>
+    </global>
+</config>
