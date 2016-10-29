@@ -8,7 +8,7 @@
 <config>
     <modules>
         <SP_Events>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </SP_Events>
     </modules>
     <global>
@@ -70,6 +70,7 @@
         <sp_events>
             <general>
                 <enabled>1</enabled>
+                <header_phones>a:1:{s:18:"_1477734154240_240";a:3:{s:9:"city_name";s:5:"45445";s:12:"phone_number";s:7:"4545454";s:10:"country_id";s:2:"AS";}}</header_phones>
                 <sender_name>Events notification</sender_name>
             </general>
         </sp_events>

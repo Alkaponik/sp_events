@@ -11,7 +11,7 @@
             <label>Events</label>
             <tab>sp</tab>
             <frontend_type>text</frontend_type>
-            <sort_order>0</sort_order>
+            <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
@@ -20,7 +20,6 @@
                     <label>General</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>0</sort_order>
-                    <expanded>1</expanded>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -35,16 +34,6 @@
                             <show_in_store>1</show_in_store>
                             <comment>Enabled or disabled output for module on frontend area</comment>
                         </enabled>
-                        <header_phones translate="label">
-                            <label>Contact Phones</label>
-                            <frontend_model>sp_events/config_phones</frontend_model>
-                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
-                            <sort_order>0</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <comment></comment>
-                        </header_phones>
                         <sender_name translate="label">
                             <label>Sender Name</label>
                             <frontend_type>text</frontend_type>
@@ -58,6 +47,34 @@
                         </sender_name>
                     </fields>
                 </general>
+                <slider>
+                    <label>Slider</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <date_from translate="label">
+                            <label>Date from</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sp_events/config_date</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </date_from>
+                        <date_to translate="label">
+                            <label>Date to</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sp_events/config_date</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </date_to>
+                    </fields>
+                </slider>
             </groups>
         </sp_events>
     </sections>
