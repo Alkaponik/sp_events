@@ -12,6 +12,11 @@
         </SP_Events>
     </modules>
     <global>
+        <blocks>
+            <sp_events>
+                <class>SP_Events_Block</class>
+            </sp_events>
+        </blocks>
         <helpers>
             <sp_events>
                 <class>SP_Events_Helper</class>
@@ -52,4 +57,21 @@
             </sp_events_read>
         </resources>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <sp_events>
+                    <file>sp/events/events.xml</file>
+                </sp_events>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <sp_events>
+            <general>
+                <enabled>1</enabled>
+                <sender_name>Events notification</sender_name>
+            </general>
+        </sp_events>
+    </default>
 </config>

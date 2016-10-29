@@ -13,6 +13,6 @@ class SP_Events_Model_Resource_Event_Collection
      */
     public function _construct()
     {
-        $this->_init("events/event");
+        $this->_init("sp_events/event");
     }
 }

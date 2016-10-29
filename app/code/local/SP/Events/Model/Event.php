@@ -8,6 +8,6 @@ class SP_Events_Model_Event
      */
     protected function _construct()
     {
-        $this->_init("events/event");
+        $this->_init("sp_events/event");
     }
 }

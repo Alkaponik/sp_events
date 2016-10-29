@@ -1,0 +1,13 @@
+<?php
+    $collection = $this->getCollection();
+?>
+<?php if (Mage::helper('sp_events')->isEnabled()): ?>
+    <div class="events-wrapper">
+        <h1><?php echo $this->__('Events') ?></h1>
+        <div class="events">
+            <?php foreach ($collection as $item): ?>
+
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
