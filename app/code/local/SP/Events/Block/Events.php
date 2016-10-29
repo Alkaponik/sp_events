@@ -14,10 +14,10 @@ class SP_Events_Block_Events
                     ->getCollection()
                     ->addFieldToFilter('is_active', 1)
                     ->addFieldToFilter(
-                        'display_from', ['to' => date('Y-m-d')]
+                        'display_from', ['lteq' => date('Y-m-d')]
                     )
                     ->addFieldToFilter(
-                        'display_to', ['from' => date('Y-m-d')]
+                        'display_to', ['gteq' => date('Y-m-d')]
                     );
     }
 }

@@ -5,10 +5,10 @@
 
 <?php if (Mage::helper('sp_events')->isEnabled() &&  Mage::helper('sp_events')->getDateRange()): ?>
     <div class="events-wrapper">
-        <h1><?php echo $this->__('Events') ?></h1>
+        <h1><?php echo $this->__('Events') . $collection->count(); ?></h1>
         <div class="events">
             <?php foreach ($collection as $item): ?>
-                Mage::getBaseUrl('media', );
+
             <?php endforeach; ?>
         </div>
     </div>
