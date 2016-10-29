@@ -8,7 +8,6 @@
 class SP_Events_Helper_Data
     extends Mage_Core_Helper_Abstract
 {
-
     const IS_ENABLE_PATH = 'sp_events/general/enabled';
     const SENDER_NAME_PATH = 'sp_events/general/sender_name';
 
