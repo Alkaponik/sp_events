@@ -28,7 +28,7 @@ class SP_Events_Helper_Data
         return Mage::getStoreConfig(self::SENDER_NAME_PATH);
     }
 
-    public function getDateRange()
+    public function isDateRange()
     {
         $now = date('Y-m-d');
 

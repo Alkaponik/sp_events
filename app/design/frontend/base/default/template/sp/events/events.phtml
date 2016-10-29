@@ -1,14 +1,16 @@
 <?php
     $collection = $this->getCollection();
-    $phones = Mage::helper('sp_events')->getHeaderPhones();
 ?>
 
-<?php if (Mage::helper('sp_events')->isEnabled() &&  Mage::helper('sp_events')->getDateRange()): ?>
+<?php if (Mage::helper('sp_events')->isEnabled() &&  Mage::helper('sp_events')->isDateRange()): ?>
     <div class="events-wrapper">
         <h1><?php echo $this->__('Events') . $collection->count(); ?></h1>
         <div class="events">
             <?php foreach ($collection as $item): ?>
-
+                <div>
+                    <h3><?php echo $item->getTitle(); ?></h3>
+                    <img src="<?php echo Mage::getBaseUrl('media', Mage_Core_Model_Store::URL_TYPE_LINK).$item->getImage(); ?>"/>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>
