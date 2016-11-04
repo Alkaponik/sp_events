@@ -63,6 +63,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <validate>validate-date</validate>
                         </date_from>
                         <date_to translate="label">
                             <label>Date to</label>
@@ -72,6 +73,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <validate>date</validate>
                         </date_to>
                     </fields>
                 </slider>
