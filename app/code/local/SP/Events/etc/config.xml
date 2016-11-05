@@ -66,6 +66,26 @@
             </updates>
         </layout>
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <sp_events before="Mage_Adminhtml">SP_Events_Adminhtml</sp_events>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <sp_events>
+                    <file>sp/events/events.xml</file>
+                </sp_events>
+            </updates>
+        </layout>
+    </adminhtml>
     <default>
         <sp_events>
             <general>

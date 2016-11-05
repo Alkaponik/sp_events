@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_event_index>
+        <reference name="content">
+            <block type="sp_events/adminhtml_event" name="event.grid_container"/>
+        </reference>
+    </adminhtml_event_index>
+
+    <adminhtml_event_new>
+        <update handle="adminhtml_event_edit"/>
+    </adminhtml_event_new>
+
+    <adminhtml_event_edit>
+        <reference name="content">
+            <block type="sp_events/adminhtml_event_edit" name="event.edit"/>
+        </reference>
+        <reference name="left">
+            <block type="sp_events/adminhtml_event_edit_tabs" name="event.tabs" />
+        </reference>
+    </adminhtml_event_edit>
+</layout>
