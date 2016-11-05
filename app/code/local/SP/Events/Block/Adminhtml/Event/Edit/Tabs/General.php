@@ -47,10 +47,10 @@ class SP_Events_Block_Adminhtml_Event_Edit_Tabs_General
         );
 
         $fieldset->addField(
-            'date_from',
+            'display_from',
             'date',
             [
-                'name'               => 'date_from',
+                'name'               => 'display_from',
                 'label'              => Mage::helper('sp_events')->__('Date From'),
                 'tabindex'           => 1,
                 'image'              => $this->getSkinUrl('images/grid-cal.gif'),
@@ -60,10 +60,10 @@ class SP_Events_Block_Adminhtml_Event_Edit_Tabs_General
         );
 
         $fieldset->addField(
-            'date_to',
+            'display_to',
             'date',
             [
-                'name'               => 'date_to',
+                'name'               => 'display_to',
                 'label'              => Mage::helper('sp_events')->__('Date To'),
                 'tabindex'           => 1,
                 'image'              => $this->getSkinUrl('images/grid-cal.gif'),

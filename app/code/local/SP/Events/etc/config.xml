@@ -56,6 +56,17 @@
                 </connection>
             </sp_events_read>
         </resources>
+        <events>
+            <sp_event_delete_item_before>
+                <observers>
+                    <delete_image_observer>
+                        <type>singleton</type>
+                        <class>sp_events/observer</class>
+                        <method>removeImages</method>
+                    </delete_image_observer>
+                </observers>
+            </sp_event_delete_item_before>
+        </events>
     </global>
     <frontend>
         <layout>
@@ -92,6 +103,14 @@
                 <enabled>1</enabled>
                 <sender_name>Events notification</sender_name>
             </general>
+            <extension>
+                <image_allowed>
+                    <jpg>1</jpg>
+                    <jpeg>1</jpeg>
+                    <png>1</png>
+                    <gif>1</gif>
+                </image_allowed>
+            </extension>
         </sp_events>
     </default>
 </config>

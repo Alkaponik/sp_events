@@ -26,9 +26,11 @@ class SP_Events_Block_Adminhtml_Event_Edit_Tabs_Image
             )
         );
 
+        $fieldset->addType('event_image', 'SP_Events_Block_Adminhtml_Renderer_Form_Image');
+
         $fieldset->addField(
             'image',
-            'image',
+            'event_image',
             [
                 'label' => Mage::helper('sp_events')->__('Image'),
                 'required' => true,

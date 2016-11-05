@@ -23,9 +23,6 @@ class SP_Events_Block_Adminhtml_Event_Edit
         $this->_controller  = 'adminhtml_event';
         $this->_mode        = 'edit';
 
-        $this->_updateButton('save', 'label', Mage::helper('sp_events')->__('Save brand'));
-        $this->_updateButton('delete', 'label', Mage::helper('sp_events')->__('Delete brand'));
-
         $eventId = (int)$this->getRequest()->getParam($this->_objectId);
 
         if (!empty($eventId)) {

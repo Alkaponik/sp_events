@@ -121,7 +121,7 @@ class SP_Events_Block_Adminhtml_Event_Grid
     protected function _prepareMassaction()
     {
         $this->setMassactionIdField('event_id');
-        $this->getMassactionBlock()->setFormFieldName('event');
+        $this->getMassactionBlock()->setFormFieldName('event_ids');
 
         $this->getMassactionBlock()
             ->addItem(
