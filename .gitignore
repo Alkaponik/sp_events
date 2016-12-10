@@ -14,6 +14,9 @@
 !/js/sp/events
 !/js/sp/events/*
 
+!/shell/import.php
+!/shell
+
 !/skin
 /skin/*
 !/skin/frontend

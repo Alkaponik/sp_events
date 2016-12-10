@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config>
     <menu>
-        <sp translate="title" module="sp_events">
+        <catalog translate="title" module="sp_events">
             <title>SP</title>
             <sort_order>99</sort_order>
             <action>adminhtml/events</action>
@@ -12,7 +12,7 @@
                     <action>adminhtml/event</action>
                 </sp_events>
             </children>
-        </sp>
+        </catalog>
     </menu>
     <acl>
         <resources>

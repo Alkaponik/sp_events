@@ -5,7 +5,8 @@
  * @copyright Copyright (c) 2016, Pavel Usachev
  */
 
-class SP_Blog_Model_Post extends Mage_Core_Model_Abstract
+class SP_Blog_Model_Resource_Post_Collection
+    extends Mage_Eav_Model_Entity_Collection_Abstract
 {
     protected function _construct()
     {
