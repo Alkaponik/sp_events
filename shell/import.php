@@ -30,9 +30,9 @@ class SP_Shell_Import extends Mage_Shell_Abstract
         if (($handle = fopen($this->_file, "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 
-                list($name, $sku, $price) = $data;
+                list($name, $parent) = $data;
 
-                $this->createProduct($name, $sku, $price);
+                $this->createCategory($name, $parent);
             }
             fclose($handle);
         }
@@ -99,6 +99,41 @@ class SP_Shell_Import extends Mage_Shell_Abstract
             sprintf("Product with sku %s isn't import", $sku);
         }
 
+    }
+
+    protected function createCategory($name, $parent = null)
+    {
+        $parentId = $parent ? $this->getParentId($parent) : 2;
+        try{
+            $category = Mage::getModel('catalog/category');
+            if ($loadedCategory = $category->loadByAttribute('name', $name)) {
+                $category = $loadedCategory;
+            }
+            $category->setName($name);
+            $category->setIsActive(1);
+            $category->setDisplayMode('PRODUCTS');
+            $category->setIsAnchor(1); //for active anchor
+            $category->setStoreId(Mage::app()->getStore()->getId());
+            $parentCategory = Mage::getModel('catalog/category')->load($parentId);
+            $category->setPath($parentCategory->getPath());
+            $category->save();
+        } catch(Exception $e) {
+            Mage::logException($e);
+            print_r('error');
+        }
+
+        return $category;
+    }
+
+    protected function getParentId($parentName)
+    {
+        $category = Mage::getModel('catalog/category')->loadByAttribute('name', $parentName);
+
+        if (!$category) {
+            $category = $this->createCategory($parentName);
+        }
+
+        return $category->getId();
     }
 
     // Usage instructions
