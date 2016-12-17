@@ -12,26 +12,30 @@ $installer->getConnection()
               [
                   'type'        => Varien_Db_Ddl_Table::TYPE_TEXT,
                   'nullable'    => false,
-                  'length'      => 255
+                  'length'      => 255,
+                  'comment'     => 'Product name'
               ]
-          )
+          );
+$installer->getConnection()
           ->addColumn(
               $installer->getTable('sp_featuredproducts/featured'),
               'price',
               [
                   'type'        => Varien_Db_Ddl_Table::TYPE_DECIMAL,
                   'nullable'    => false,
-                  'scale'       => 12,
-                  'precession'  => 4
+                  'length'       => '12,4',
+                  'comment'     => 'Product price'
               ]
-          )
+          );
+$installer->getConnection()
           ->addColumn(
               $installer->getTable('sp_featuredproducts/featured'),
               'sku',
               [
                   'type'        => Varien_Db_Ddl_Table::TYPE_TEXT,
                   'nullable'    => false,
-                  'length'      => 64
+                  'length'      => 64,
+                  'comment'     => 'Product SKU'
               ]
           );
 

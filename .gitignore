@@ -70,6 +70,8 @@
 !/app/etc/modules/
 /app/etc/modules/*
 !/app/etc/modules/SP_Events.xml
+!/app/etc/modules/SP_Blog.xml
+!/app/etc/modules/SP_FeaturedProducts.xml
 
 #Ignore all of app/design except for our files
 /app/design/*

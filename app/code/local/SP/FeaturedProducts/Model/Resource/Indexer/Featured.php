@@ -42,14 +42,35 @@ class SP_FeaturedProducts_Model_Resource_Indexer_Featured
                  );
         }
 
-        $sqlStatement = $select->insertIgnoreFromSelect(
-            $this->getTable('sp_featuredproducts/featured'),
-            [
-                'product_id'
-            ]
-        );
+        $featuredProducts = Mage::getResourceModel('catalog/product_collection')
+                                ->addAttributeToSelect('*');
 
-        $this->_getWriteAdapter()->query($sqlStatement);
+        $featuredProducts->addAttributeToFilter('entity_id' , [
+            'in' => $select->query()->fetchAll(PDO::FETCH_NUM)
+        ]);
+
+
+//        $sqlStatement = $select->insertIgnoreFromSelect(
+//            $this->getTable('sp_featuredproducts/featured'),
+//            [
+//                'product_id'
+//            ]
+//        );
+
+        foreach ($featuredProducts as $product) {
+            $featured = Mage::getModel('sp_featuredproducts/featured');
+
+            $featured->setData([
+                'product_id' => $product->getId(),
+                'name'       => $product->getName(),
+                'sku'        => $product->getSku(),
+                'price'      => $product->getFinalPrice(),
+            ]);
+
+            $featured->save();
+        }
+
+        //$this->_getWriteAdapter()->query($sqlStatement);
     }
 
     public function reindexAll()
