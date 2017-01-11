@@ -57,6 +57,9 @@ class SP_Events_Helper_Data
      */
     public function savePostData(array $data)
     {
+        if (is_array($data['image']) && isset($data['image']['value'])) {
+            $data['image'] = $data['image']['value'];
+        }
 
         if ($imageName = $this->uploadFile()) {
             $data['image'] = $imageName;

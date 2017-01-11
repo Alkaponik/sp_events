@@ -41,7 +41,7 @@ class SP_Events_Block_Adminhtml_Event_Edit_Tabs_General
             'text',
             [
                 'label' => Mage::helper('sp_events')->__('Title'),
-                'required' => false,
+                'required' => true,
                 'name' => 'title',
             ]
         );
@@ -69,6 +69,15 @@ class SP_Events_Block_Adminhtml_Event_Edit_Tabs_General
                 'image'              => $this->getSkinUrl('images/grid-cal.gif'),
                 'format'             => Mage::app()->getLocale()
                     ->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT)
+            ]
+        );
+
+        $fieldset->addField(
+            'short_description',
+            'textarea',
+            [
+                'name'               => 'short_description',
+                'label'              => Mage::helper('sp_events')->__('Short Description'),
             ]
         );
 

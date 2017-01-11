@@ -10,6 +10,7 @@ class SP_FeaturedProducts_Model_Resource_Featured
 {
 
     protected $_isPkAutoIncrement = false;
+
     /**
      * {@inheritdoc}
      */

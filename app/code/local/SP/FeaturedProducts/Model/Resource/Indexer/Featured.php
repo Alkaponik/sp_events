@@ -32,7 +32,7 @@ class SP_FeaturedProducts_Model_Resource_Indexer_Featured
             $this->_getWriteAdapter()->delete(
                 $this->getTable('sp_featuredproducts/featured'),
                 [
-                    'product_id IN(?)', $productId
+                    'product_id IN(?)', implode(',',$productId)
                 ]
             );
         } else {
