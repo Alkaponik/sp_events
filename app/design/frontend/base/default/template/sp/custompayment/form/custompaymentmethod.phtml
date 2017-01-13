@@ -1,0 +1,30 @@
+<?php
+/** @var SP_CustomPayment_Block_Form_Custompaymentmethod $this */
+?>
+<div class="form-list" id="payment_form_<?php echo $this->getMethodCode(); ?>">
+    <div>
+        <label><?php echo $this->__('Custom field one'); ?>*</label>
+        <span>
+            <input
+                type="text"
+                title="<?php echo $this->__('Custom field one'); ?>"
+                name="payment[custom_field_one]"
+                value="<?php echo $this->escapeHtml($this->getInfoData('custom_field_one')); ?>"
+            />
+        </span>
+    </div>
+    <div>
+        <label><?php echo $this->__('Custom field two'); ?>*</label>
+        <span>
+              <input
+                  type="text"
+                  title="<?php echo $this->__('Custom field two'); ?>"
+                  name="payment[custom_field_two]"
+                  value="<?php echo $this->escapeHtml($this->getInfoData('custom_field_two')); ?>"
+              />
+        </span>
+    </div>
+</div>
+<div>
+    <?php echo $this->getMethod()->getConfigData('message'); ?>
+</div>

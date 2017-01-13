@@ -13,7 +13,7 @@
         </helpers>
         <models>
             <sp_customshipping>
-                <class>SP_Customshipping_Model</class>
+                <class>SP_CustomShipping_Model</class>
             </sp_customshipping>
         </models>
     </global>

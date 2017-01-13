@@ -4,11 +4,11 @@
  * @author Pavel Usachev <webcodekeeper@hotmail.com>
  * @copyright Copyright (c) 2016, Pavel Usachev
  */
-class SP_CustomProduct_Model_Carrier
+class SP_CustomShipping_Model_Carrier
     extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface
 {
-    protected $_code = 'sp_shipping';
+    protected $_code = 'sp_customshipping';
 
     /**
      * @var SP_CustomShipping_Helper_Data
@@ -37,7 +37,7 @@ class SP_CustomProduct_Model_Carrier
         $expressMaxWeight = $this->_helper->getExpressMaxWeight();
 
         foreach ($request->getAllItems() as $item) {
-            if ($item->getWeight > $expressMaxWeight) {
+            if ($item->getWeight() > $expressMaxWeight) {
                 $this->_expressAvailable = false;
                 break;
             }
@@ -61,11 +61,10 @@ class SP_CustomProduct_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('large');
+        $rate->setMethod('standard');
         /** @TODO get method title from system config */
-        $rate->setMethodTitle('Standart delivery');
-        /** @TODO get price from system config */
-        $rate->setPrice(1.5);
+        $rate->setMethodTitle('Standard delivery');
+        $rate->setPrice($this->_helper->getStandardPrice());
         $rate->setCost(0);
 
         return $rate;
@@ -81,11 +80,10 @@ class SP_CustomProduct_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('large');
+        $rate->setMethod('express');
         /** @TODO get method title from system config */
         $rate->setMethodTitle('Express delivery');
-        /** @TODO get price from system config */
-        $rate->setPrice(10);
+        $rate->setPrice($this->_helper->getExpressPrice());
         $rate->setCost(0);
 
         return $rate;
