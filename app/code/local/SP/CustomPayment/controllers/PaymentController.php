@@ -41,7 +41,6 @@ class SP_CustomPayment_PaymentController
             Mage_Core_Controller_Varien_Action::_redirect('checkout/onepage/failure', [
                 'secure' => false
             ]);
-            return;
         }
 
         $orderId = $request->get('orderId');

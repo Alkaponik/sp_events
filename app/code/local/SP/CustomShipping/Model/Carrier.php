@@ -36,15 +36,15 @@ class SP_CustomShipping_Model_Carrier
 
         $expressMaxWeight = $this->_helper->getExpressMaxWeight();
 
-        foreach ($request->getAllItems() as $item) {
-            if ($item->getWeight() > $expressMaxWeight) {
+        foreach ($request->getAllItems() as $product) {
+            if ($product->getWeight() > $expressMaxWeight) {
                 $this->_expressAvailable = false;
                 break;
             }
         }
 
         if ($this->_expressAvailable) {
-            $result->append($this->_getExpressRate());
+                $result->append($this->_getExpressRate());
         }
         $result->append($this->_getStandardRate());
 

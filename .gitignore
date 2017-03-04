@@ -60,6 +60,7 @@
 !app/code/local/SP
 !app/code/local/SP/Events
 !app/code/local/SP/Events/*
+!app/code/local/SP/FeaturedLinks/*
 # use lines below if you have multiple company extensions
 # and want to just commit a specific one
 #/app/code/local/{company}/*
@@ -72,6 +73,7 @@
 !/app/etc/modules/SP_Events.xml
 !/app/etc/modules/SP_Blog.xml
 !/app/etc/modules/SP_FeaturedProducts.xml
+!/app/etc/modules/SP_FeaturedLinks.xml
 
 #Ignore all of app/design except for our files
 /app/design/*
