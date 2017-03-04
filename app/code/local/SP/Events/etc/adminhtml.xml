@@ -11,6 +11,11 @@
                     <sort_order>0</sort_order>
                     <action>adminhtml/event</action>
                 </sp_events>
+                <sp_events_new translate="title" module="sp_events">
+                    <title>New</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/event/new</action>
+                </sp_events_new>
             </children>
         </events>
     </menu>

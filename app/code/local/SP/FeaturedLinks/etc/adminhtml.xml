@@ -1,5 +1,19 @@
 <?xml version="1.0"?>
 <config>
+    <menu>
+        <sp_featuredlinks translate="title" module="sp_events">
+            <title>FeaturedLinks</title>
+            <sort_order>99</sort_order>
+            <action>adminhtml/featuredlinks</action>
+            <children>
+                <sp_featuredlinks_grid translate="title" module="sp_events">
+                    <title>Grid</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/featuredlinks</action>
+                </sp_featuredlinks_grid>
+            </children>
+        </sp_featuredlinks>
+    </menu>
     <acl>
         <resources>
             <admin>

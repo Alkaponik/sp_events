@@ -51,4 +51,24 @@
             </featuredlinks_read>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <sp_featuredlinks before="Mage_Adminhtml">SP_FeaturedLinks_Adminhtml</sp_featuredlinks>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <sp_featuredlinks>
+                    <file>sp/featuredlinks/layout.xml</file>
+                </sp_featuredlinks>
+            </updates>
+        </layout>
+    </adminhtml>
 </config> 
