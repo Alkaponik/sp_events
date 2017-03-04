@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2016, Pavel Usachev
+ */
+-->
+<layout version="0.1.0">
+    <cms_index_index>
+        <reference name="content">
+            <block type="sp_events/events" name="sp.events" template="sp/events/events.phtml" />
+        </reference>
+    </cms_index_index>
+</layout>
