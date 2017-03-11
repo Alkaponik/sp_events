@@ -5,4 +5,17 @@
             <block type="sp_featuredlinks/adminhtml_links" name="links.grid_container"/>
         </reference>
     </adminhtml_featuredlinks_index>
+
+    <adminhtml_featuredlinks_new>
+        <update handle="adminhtml_featuredlinks_edit"/>
+    </adminhtml_featuredlinks_new>
+
+    <adminhtml_featuredlinks_edit>
+        <reference name="content">
+            <block type="sp_featuredlinks/adminhtml_links_edit" name="links.edit"/>
+        </reference>
+        <reference name="left">
+            <block type="sp_featuredlinks/adminhtml_links_edit_tabs" name="links.tabs" />
+        </reference>
+    </adminhtml_featuredlinks_edit>
 </layout>

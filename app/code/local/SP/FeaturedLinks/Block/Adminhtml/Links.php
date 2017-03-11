@@ -14,8 +14,8 @@ class SP_FeaturedLinks_Block_Adminhtml_Links
     {
         $this->_controller = 'adminhtml_links';
         $this->_blockGroup = 'sp_featuredlinks';
-        $this->_headerText = Mage::helper('sp_events')->__('Events grid');
-        $this->_addButtonLabel = Mage::helper('sp_events')->__('Add event');
+        $this->_headerText = Mage::helper('sp_events')->__('Links grid');
+        $this->_addButtonLabel = Mage::helper('sp_events')->__('Add link');
 
         parent::__construct();
     }

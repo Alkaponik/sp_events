@@ -17,20 +17,20 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
         $this->setForm($form);
 
         $fieldset = $form->addFieldset(
-            'event_form',
+            'links_form',
             array(
                 'legend' => Mage::helper('sp_events')->__('Event information')
             )
         );
 
-        $model = Mage::registry('event_data');
+        $model = Mage::registry('links_data');
 
         if ($model && $model->getId()) {
             $fieldset->addField(
-                'event_id',
+                'link_id',
                 'hidden',
                 [
-                    'name'      => 'event_id',
+                    'name'      => 'link_id',
                     'required'  => true
                 ]
             );
@@ -40,9 +40,19 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
             'title',
             'text',
             [
-                'label' => Mage::helper('sp_events')->__('Title'),
+                'label' => Mage::helper('sp_featuredlinks')->__('Title'),
                 'required' => true,
                 'name' => 'title',
+            ]
+        );
+
+        $fieldset->addField(
+            'link',
+            'text',
+            [
+                'label' => Mage::helper('sp_featuredlinks')->__('Link'),
+                'required' => true,
+                'name' => 'link',
             ]
         );
 
@@ -51,7 +61,7 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
             'date',
             [
                 'name'               => 'display_from',
-                'label'              => Mage::helper('sp_events')->__('Date From'),
+                'label'              => Mage::helper('sp_featuredlinks')->__('Date From'),
                 'tabindex'           => 1,
                 'image'              => $this->getSkinUrl('images/grid-cal.gif'),
                 'format'             => Mage::app()->getLocale()
@@ -64,7 +74,7 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
             'date',
             [
                 'name'               => 'display_to',
-                'label'              => Mage::helper('sp_events')->__('Date To'),
+                'label'              => Mage::helper('sp_featuredlinks')->__('Date To'),
                 'tabindex'           => 1,
                 'image'              => $this->getSkinUrl('images/grid-cal.gif'),
                 'format'             => Mage::app()->getLocale()
@@ -77,7 +87,7 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
             'textarea',
             [
                 'name'               => 'short_description',
-                'label'              => Mage::helper('sp_events')->__('Short Description'),
+                'label'              => Mage::helper('sp_featuredlinks')->__('Short Description'),
             ]
         );
 
@@ -100,11 +110,11 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Edit_Tabs_General
             )
         );
 
-        if (Mage::getSingleton('adminhtml/session')->getData('event_data')) {
-            $form->setValues(Mage::getSingleton('adminhtml/session')->getData('event_data'));
-            Mage::getSingleton('adminhtml/session')->setData('event_data', null);
-        } elseif (Mage::registry('event_data')) {
-            $form->setValues(Mage::registry('event_data')->getData());
+        if (Mage::getSingleton('adminhtml/session')->getData('links_data')) {
+            $form->setValues(Mage::getSingleton('adminhtml/session')->getData('links_data'));
+            Mage::getSingleton('adminhtml/session')->setData('links_data', null);
+        } elseif (Mage::registry('links_data')) {
+            $form->setValues(Mage::registry('links_data')->getData());
         }
 
         return parent::_prepareForm();

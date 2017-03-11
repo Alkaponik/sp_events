@@ -59,7 +59,25 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Grid
             array(
                 'header'    => Mage::helper('sp_featuredlinks')->__('Link'),
                 'align'     =>'left',
+                'index'     => 'link',
+            )
+        );
+
+        $this->addColumn(
+            'display_from',
+            array(
+                'header'    => Mage::helper('sp_featuredlinks')->__('Display from'),
+                'align'     =>'left',
                 'index'     => 'display_from',
+            )
+        );
+
+        $this->addColumn(
+            'display_to',
+            array(
+                'header'    => Mage::helper('sp_featuredlinks')->__('Display to'),
+                'align'     =>'left',
+                'index'     => 'display_to',
             )
         );
 
@@ -106,16 +124,16 @@ class SP_FeaturedLinks_Block_Adminhtml_Links_Grid
      */
     protected function _prepareMassaction()
     {
-        $this->setMassactionIdField('event_id');
-        $this->getMassactionBlock()->setFormFieldName('event_ids');
+        $this->setMassactionIdField('link_id');
+        $this->getMassactionBlock()->setFormFieldName('link_ids');
 
         $this->getMassactionBlock()
             ->addItem(
                 'delete',
                 array(
-                    'label'    => Mage::helper('sp_events')->__('Delete'),
+                    'label'    => Mage::helper('sp_featuredlinks')->__('Delete'),
                     'url'      => $this->getUrl('*/*/massDelete'),
-                    'confirm'  => Mage::helper('sp_events')->__('Are you sure?')
+                    'confirm'  => Mage::helper('sp_featuredlinks')->__('Are you sure?')
                 )
             );
 
