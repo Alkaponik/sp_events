@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_contacts_index>
+        <reference name="content">
+            <block type="sp_contacts/adminhtml_contacts" name="contacts.grid_container"/>
+        </reference>
+    </adminhtml_contacts_index>
+
+    <adminhtml_contacts_new>
+        <update handle="adminhtml_contacts_edit"/>
+    </adminhtml_contacts_new>
+
+    <adminhtml_contacts_edit>
+        <reference name="content">
+            <block type="sp_contacts/adminhtml_contacts_edit" name="contacts.edit"/>
+        </reference>
+        <reference name="left">
+            <block type="sp_contacts/adminhtml_contacts_edit_tabs" name="contacts.tabs" />
+        </reference>
+    </adminhtml_contacts_edit>
+</layout>
