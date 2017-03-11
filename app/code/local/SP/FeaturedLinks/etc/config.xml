@@ -7,6 +7,11 @@
     </modules>
     <global>
         <blocks>
+            <catalog>
+                <rewrite>
+                    <product_view>SP_FeaturedLinks_Block_Product_View</product_view>
+                </rewrite>
+            </catalog>
             <sp_featuredlinks>
                 <class>SP_FeaturedLinks_Block</class>
             </sp_featuredlinks>
@@ -51,6 +56,17 @@
             </featuredlinks_read>
         </resources>
     </global>
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <sp_featuredlinks before="Mage_Contacts">SP_FeaturedLinks</sp_featuredlinks>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
     <admin>
         <routers>
             <adminhtml>
